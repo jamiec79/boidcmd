@@ -173,7 +173,7 @@ function valBetween(v, min, max) {
 
 function setCPU(value){
     fs.readFile( '/var/lib/boinc-client/global_prefs_override.xml', function(err, data) {
-        var cpuPercent = valBetween(value * 1 + 15, 70, 100)
+        var cpuPercent = valBetween(value * 1 + 15, 25, 35, 45, 55, 65, 75, 85, 95, 100)
         console.log(cpuPercent)
         var result1 = convert.xml2json(data, {compact: true, spaces: 4});
         var object = JSON.parse(result1);
